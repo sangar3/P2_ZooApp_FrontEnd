@@ -28,7 +28,7 @@ Zoobutton.addEventListener("click", () => {
     // ADD CARD DESCR. DIV THAT IS A CHILD OF CARD BODY DIV
     const cardDescDiv = document.createElement('p');
     var zooDesc = window.prompt("Enter your Zoo description: ");
-    const cardDescDivText = document.createTextNode(zooDesc + " Zoo");
+    const cardDescDivText = document.createTextNode(zooDesc);
     cardDescDiv.appendChild(cardDescDivText);
     cardDescDiv.classList.add('card-text');
     cardBodyDiv.appendChild(cardDescDiv);

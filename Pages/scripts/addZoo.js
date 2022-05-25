@@ -35,6 +35,12 @@ Zoobutton.addEventListener("click", () => {
 
 
     // CREATE ADD ANIMAL BUTTON 
-
+    const addAnimalButton = document.createElement('button');
+    const buttonText = document.createTextNode("Add Animal");
+    addAnimalButton.append(buttonText);
+    addAnimalButton.classList.add('btn');
+    addAnimalButton.classList.add('btn-primary');
+    addAnimalButton.setAttribute("id","addAnimal");
+    cardBodyDiv.appendChild(addAnimalButton);
 
 })

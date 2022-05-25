@@ -58,6 +58,9 @@ function renderHTML(data){
     resp.append("Lifespan: " + JSON.stringify(data[0].lifespan));
     resp.append(document.createElement('br'));
 
+    resp.append("Diet: " + JSON.stringify(data[0].diet));
+    resp.append(document.createElement('br'));
+
     // let image = document.createElement('img');
     // image.setAttribute("src", JSON.stringify(data[0].image_link));
     // image.setAttribute("height", "300");

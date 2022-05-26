@@ -8,6 +8,7 @@ Zoobutton.addEventListener("click", () => {
     // ADD CARD DIV 
     const classCardDiv = document.createElement('div');
     classCardDiv.classList.add('card')
+    classCardDiv.setAttribute("id","card");
     document.body.appendChild(classCardDiv);
     
 
@@ -78,6 +79,9 @@ Zoobutton.addEventListener("click", () => {
 
     })
 
+   
+    
+
 })
 
 function renderAnimalCardHTML(data){
@@ -103,3 +107,13 @@ function renderAnimalCardHTML(data){
 
 
 }
+
+let DeleteZooButton = document.getElementById("deleteZoo");
+
+DeleteZooButton.addEventListener("click", () => {
+    console.log("delete zoo button was pressed")
+    const card = document.getElementById("card")
+    card.remove();
+
+})
+

@@ -10,6 +10,7 @@ button.addEventListener("click", () => {
     //STEP 1.5: Make an template for the incoming form data
     //target the form values on our page
     let form = document.getElementById("field").value;
+    console.log(form)
 
     //STEP 2: Define the behaviors of our responses as they come back from the server
     /*

@@ -43,39 +43,40 @@ Zoobutton.addEventListener("click", () => {
     addAnimalButton.setAttribute("id","addAnimal");
     cardBodyDiv.appendChild(addAnimalButton);
 
+    // CREATE INPUT TAG
     let AnimalButton = document.getElementById("addAnimal");
-
     const inputPtag = document.createElement('p');
     inputPtag.setAttribute("id","input");
     cardBodyDiv.appendChild(inputPtag);
-
+    // ANIMAL EVENT LISTENER
     AnimalButton.addEventListener("click", () => {
-    console.log("Add animal button was pressed")
+        console.log("Add animal button was pressed")
 
-    
-    var form = window.prompt("Enter your Animal Number(1-10): ");
-    console.log(form)
-     //STEP 1: Create XmlHttpRequest object
-    let xhr = new XMLHttpRequest();
+        // USER INPUT 
+        var form = window.prompt("Enter your Animal Number(1-10): ");
+        console.log(form)
+        //STEP 1: Create XmlHttpRequest object
+        let xhr = new XMLHttpRequest();
 
-    //STEP 2: Define the behaviors of our responses as they come back from the server
-   xhr.onreadystatechange = function(){
-       //200 status code is a OK response
-       //which means that everything was processed correctly
-       if(this.readyState == 4 && this.status == 200){
-        let data = JSON.parse(xhr.responseText);
-        console.log(data);
-        renderAnimalCardHTML(data);
-       }
-   };
+        //STEP 2: Define the behaviors of our responses as they come back from the server
+        xhr.onreadystatechange = function(){
+        //200 status code is a OK response
+        //which means that everything was processed correctly
+        if(this.readyState == 4 && this.status == 200){
+            let data = JSON.parse(xhr.responseText);
+            console.log(data);
+            renderAnimalCardHTML(data);
+        }
+    };
 
-   //STEP 3: Open the request
-   xhr.open("GET", `https://zoo-animal-api.herokuapp.com/animals/rand/${form}`);
+    //STEP 3: Open the request
+    xhr.open("GET", `https://zoo-animal-api.herokuapp.com/animals/rand/${form}`);
 
-   //STEP 4: send the request
-   xhr.send();
+    //STEP 4: send the request
+    xhr.send();
 
-})
+
+    })
 
 })
 

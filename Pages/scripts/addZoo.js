@@ -83,7 +83,7 @@ Zoobutton.addEventListener("click", () => {
        if(this.readyState == 4 && this.status == 200){
         let data = JSON.parse(xhr.responseText);
         console.log(data);
-        renderHTML(data);
+        renderAnimalCardHTML(data);
        }
    };
 
@@ -97,7 +97,7 @@ Zoobutton.addEventListener("click", () => {
 
 })
 
-function renderHTML(data){
+function renderAnimalCardHTML(data){
     //target the p tag that will hold the response data
     let resp = document.getElementById("input");
 

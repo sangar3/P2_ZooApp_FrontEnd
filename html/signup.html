@@ -39,12 +39,12 @@
                       <!-- TITLE -->
                       <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Create a Account</p>
       
-                      <form class="mx-1 mx-md-4">
+                      <form method="POST" class="mx-1 mx-md-4" id="register">
                         <!-- USERNAME -->
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <input type="text" id="signup_username" class="form-control" placeholder="Enter a Username"  />
+                            <input type="text" id="username" class="form-control" placeholder="Enter a Username"  />
                             <label class="form-label" for="form3Example1c">User Name:</label>
                           </div>
                         </div>
@@ -52,7 +52,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <input type="password" id="signup_password" class="form-control" placeholder="Enter a Password"  />
+                            <input type="password" id="password" class="form-control" placeholder="Enter a Password"  />
                             <label class="form-label" for="form3Example3c">Password:</label>
                           </div>
                         </div>
@@ -60,7 +60,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <input type="text" id="signup_firstname" class="form-control" placeholder="Enter First Name"  />
+                            <input type="text" id="firstname" class="form-control" placeholder="Enter First Name"  />
                             <label class="form-label" for="form3Example4c">First Name:</label>
                           </div>
                         </div>
@@ -68,7 +68,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <input type="text" id="signup_lastname" class="form-control" placeholder="Enter Last Name"  />
+                            <input type="text" id="lastname" class="form-control" placeholder="Enter Last Name"  />
                             <label class="form-label" for="form3Example4cd">Last Name:</label>
                           </div>
                         </div>
@@ -76,30 +76,29 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                             <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                             <div class="form-outline flex-fill mb-0">
-                              <input type="email" id="signup_email" class="form-control" placeholder="Enter Email"  />
+                              <input type="email" id="email" class="form-control" placeholder="Enter Email"  />
                               <label class="form-label" for="form3Example3c">Your Email:</label>
                             </div>
                         </div>
-                        <!-- DROPDOWN USER TYPE -->
+                        <!--  USER TYPE -->
                         <div class="d-flex flex-row align-items-center mb-4">
-                            <label class="form-label" for="form3Example4cd">Enter User Type:</label>   
-                            <br>
-                            <select class="select" id="signup_userType">
-                                
-                                <option value="2">User</option>
-                                <option value="3">Manager</option>
-                                
-                              </select>
-                              
+                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input type="text" id="usertype" class="form-control" placeholder="Enter UserType"  />
+                            <label class="form-label" for="form3Example4cd">UserType:</label>
+                          </div>
                         </div>
                         
                        
       
                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                          <button type="button" onclick="" class="btn btn-primary btn-lg">Register</button>
+                          <!-- <button type="button" id="register-btn" class="btn btn-primary btn-lg">Register</button> -->
+                          <input type="submit" value="Finish" class="btn btn-primary" id="register-btn">
                         </div>
       
                       </form>
+
+                      
       
                     </div>
                     <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
@@ -122,5 +121,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="scripts/registration.js"></script>
   </body>
 </html>

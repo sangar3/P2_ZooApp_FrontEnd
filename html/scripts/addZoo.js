@@ -4,7 +4,7 @@ let Zoobutton = document.getElementById("addZoo");
 
 Zoobutton.addEventListener("click", () => {
     console.log("Add zoo button was pressed")
-
+    Zoobutton.disabled = true;
     // ADD CARD DIV 
     const classCardDiv = document.createElement('div');
     classCardDiv.classList.add('card')
@@ -52,7 +52,7 @@ Zoobutton.addEventListener("click", () => {
     // ANIMAL EVENT LISTENER
     AnimalButton.addEventListener("click", () => {
         console.log("Add animal button was pressed")
-
+        Zoobutton.disabled = false;
         // USER INPUT 
         var form = window.prompt("Enter your Animal Number(1-10): ");
         console.log(form)
@@ -85,6 +85,59 @@ Zoobutton.addEventListener("click", () => {
 })
 
 function renderAnimalCardHTML(data){
+
+    // ANIMAL CARD FRONT END 
+    const classCardDiv = document.createElement('div');
+    classCardDiv.classList.add('card')
+    classCardDiv.setAttribute("id","card");
+    document.body.appendChild(classCardDiv);
+    
+
+    // ADD CARD BODY DIV THAT IS CHILD OF CARD DIV
+    const cardBodyDiv = document.createElement('div');
+    classCardDiv.classList.add('card-body');
+    classCardDiv.appendChild(cardBodyDiv)
+
+    // add flex align div to card body
+    const FlexAlignDiv = document.createElement('div');
+    FlexAlignDiv.classList.add('d-flex');
+    FlexAlignDiv.classList.add('align-items-center');
+    classCardDiv.appendChild(FlexAlignDiv)
+
+    // img 
+    const AnimalImg = document.createElement('img');
+    classCardDiv.setAttribute("id","AnimalImg");
+
+    // ms-3 div 
+    const msDiv = document.createElement('div');
+    msDiv.classList.add('ms-2');
+    FlexAlignDiv.appendChild(msDiv);
+
+    // orderd list 
+    const olList = document.createElement('ol');
+    olList.classList.add('list-group');
+    olList.classList.add('list-group-light');
+    olList.classList.add('list-group-numbered');
+    msDiv.appendChild(olList);
+
+    // list items for orded list 
+    const nameListItem = document.createElement('li');
+    nameListItem.classList.add('list-group-item');
+    nameListItem.classList.add('d-flex')
+    nameListItem.classList.add('justify-content-between')
+    nameListItem.classList.add('align-items-start')
+    olList.appendChild(nameListItem);
+
+    const nameDiv = document.createElement('div');
+    nameDiv.classList.add('ms-2');
+    nameDiv.classList.add('me-auto');
+    nameListItem.appendChild(nameDiv);
+
+    const headerName = document.createElement('h6');
+    nameDiv.appendChild(headerName)
+    
+
+
     //target the p tag that will hold the response data
     let resp = document.getElementById("input");
 
@@ -95,7 +148,9 @@ function renderAnimalCardHTML(data){
     //append all response data to my webpage
     resp.append("Name: " + JSON.stringify(data[0].name));
     resp.append(document.createElement('br'));
-
+    console.log(JSON.stringify(data[0].name))
+    animalName = JSON.stringify(data[0].name)
+    headerName.innerHTML+=animalName;
     resp.append("Lifespan: " + JSON.stringify(data[0].lifespan));
     resp.append(document.createElement('br'));
 
@@ -104,8 +159,11 @@ function renderAnimalCardHTML(data){
 
     resp.append("Image link: " + JSON.stringify(data[0].image_link));
     resp.append(document.createElement('br'));
-
-
+    console.log(JSON.stringify(data[0].image_link));
+    var animalLink = JSON.stringify(data[0].image_link)
+    console.log(animalLink)
+    // AnimalImg.src=animalLink
+    FlexAlignDiv.appendChild(AnimalImg);
 }
 
 let DeleteZooButton = document.getElementById("deleteZoo");

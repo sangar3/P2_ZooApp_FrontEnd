@@ -46,7 +46,7 @@ Zoobutton.addEventListener("click", () => {
 
     // CREATE DELETE ANIMAL BUTTON
     const deleteAnimalButton = document.createElement('button');
-    const deletebuttonText = document.createTextNode("Delete Animal");
+    const deletebuttonText = document.createTextNode("Delete Animal(s)");
     deleteAnimalButton.append(deletebuttonText);
     deleteAnimalButton.classList.add('btn');
     deleteAnimalButton.classList.add('btn-danger');

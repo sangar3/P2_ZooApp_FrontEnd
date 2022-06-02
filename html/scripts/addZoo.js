@@ -113,56 +113,76 @@ function renderAnimalCardHTML(data){
     msDiv.classList.add('ms-2');
     FlexAlignDiv.appendChild(msDiv);
 
-    // orderd list 
+    // MAIN orderd list 
     const olList = document.createElement('ol');
     olList.classList.add('list-group');
     olList.classList.add('list-group-light');
     olList.classList.add('list-group-numbered');
     msDiv.appendChild(olList);
 
-    // list items for orded list 
+    // NAME list items for orded list 
     const nameListItem = document.createElement('li');
     nameListItem.classList.add('list-group-item');
     nameListItem.classList.add('d-flex')
     nameListItem.classList.add('justify-content-between')
     nameListItem.classList.add('align-items-start')
     olList.appendChild(nameListItem);
-
+    // NAME DIV 
     const nameDiv = document.createElement('div');
     nameDiv.classList.add('ms-2');
     nameDiv.classList.add('me-auto');
     nameListItem.appendChild(nameDiv);
 
+    // NAME HEADER
     const headerName = document.createElement('h6');
     nameDiv.appendChild(headerName)
     
+    const headerID = document.createElement('h6');
+    nameDiv.appendChild(headerID)
 
+    const headerLifespan = document.createElement('h6');
+    nameDiv.appendChild(headerLifespan)
+
+    const headerDiet = document.createElement('h6');
+    nameDiv.appendChild(headerDiet);
 
     //target the p tag that will hold the response data
     let resp = document.getElementById("input");
 
 
-    resp.append("ID: " + JSON.stringify(data[0].id));
-    resp.append(document.createElement('br'));
+    // resp.append("ID: " + JSON.stringify(data[0].id));
+    // resp.append(document.createElement('br'));
+    console.log("ID: " + JSON.stringify(data[0].id));
+    AnimalID =  JSON.stringify(data[0].id)
+    headerID.innerHTML+= "ID: "+AnimalID
 
-    //append all response data to my webpage
-    resp.append("Name: " + JSON.stringify(data[0].name));
-    resp.append(document.createElement('br'));
-    console.log(JSON.stringify(data[0].name))
+
+    // resp.append("Name: " + JSON.stringify(data[0].name));
+    // resp.append(document.createElement('br'));
+    console.log("Name: " + JSON.stringify(data[0].name))
     animalName = JSON.stringify(data[0].name)
-    headerName.innerHTML+=animalName;
-    resp.append("Lifespan: " + JSON.stringify(data[0].lifespan));
-    resp.append(document.createElement('br'));
+    headerName.innerHTML+="Name: "+animalName;
 
-    resp.append("Diet: " + JSON.stringify(data[0].diet));
-    resp.append(document.createElement('br'));
 
-    resp.append("Image link: " + JSON.stringify(data[0].image_link));
-    resp.append(document.createElement('br'));
-    console.log(JSON.stringify(data[0].image_link));
+    // resp.append("Lifespan: " + JSON.stringify(data[0].lifespan));
+    // resp.append(document.createElement('br'));
+    console.log("Lifespan: " + JSON.stringify(data[0].lifespan))
+    animalLifespan =  JSON.stringify(data[0].lifespan)
+    headerLifespan.innerHTML+="Lifespan: "+animalLifespan;
+
+
+    // resp.append("Diet: " + JSON.stringify(data[0].diet));
+    // resp.append(document.createElement('br'));
+    console.log("Diet: " + JSON.stringify(data[0].diet))
+    animalDiet = JSON.stringify(data[0].diet)
+    headerDiet.innerHTML+="Diet: "+animalDiet;
+
+    // resp.append("Image link: " + JSON.stringify(data[0].image_link));
+    // resp.append(document.createElement('br'));
+    // console.log(JSON.stringify(data[0].image_link));
     var animalLink = JSON.stringify(data[0].image_link)
     console.log(animalLink)
-    // AnimalImg.src=animalLink
+    AnimalImg.src=animalLink
     FlexAlignDiv.appendChild(AnimalImg);
 }
 

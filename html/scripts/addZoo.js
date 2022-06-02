@@ -44,6 +44,17 @@ Zoobutton.addEventListener("click", () => {
     addAnimalButton.setAttribute("id","addAnimal");
     cardBodyDiv.appendChild(addAnimalButton);
 
+    // CREATE DELETE ANIMAL BUTTON
+    const deleteAnimalButton = document.createElement('button');
+    const deletebuttonText = document.createTextNode("Delete Animal");
+    deleteAnimalButton.append(deletebuttonText);
+    deleteAnimalButton.classList.add('btn');
+    deleteAnimalButton.classList.add('btn-danger');
+    deleteAnimalButton.setAttribute("id","deleteAnimal");
+    cardBodyDiv.appendChild(deleteAnimalButton);
+
+
+
     // CREATE INPUT TAG
     let AnimalButton = document.getElementById("addAnimal");
     const inputPtag = document.createElement('p');

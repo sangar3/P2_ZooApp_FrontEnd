@@ -89,7 +89,7 @@ function renderAnimalCardHTML(data){
     // ANIMAL CARD FRONT END 
     const classCardDiv = document.createElement('div');
     classCardDiv.classList.add('card')
-    classCardDiv.setAttribute("id","card");
+    classCardDiv.setAttribute("id","Animal");
     document.body.appendChild(classCardDiv);
     
 
@@ -106,7 +106,7 @@ function renderAnimalCardHTML(data){
 
     // img 
     const AnimalImg = document.createElement('img');
-    classCardDiv.setAttribute("id","AnimalImg");
+    
 
     // ms-3 div 
     const msDiv = document.createElement('div');
@@ -192,6 +192,11 @@ DeleteZooButton.addEventListener("click", () => {
     console.log("delete zoo button was pressed")
     const card = document.getElementById("card")
     card.remove();
+
+    
+
+    const Animalcard = document.getElementById("Animal")
+    Animalcard.remove();
 
 })
 

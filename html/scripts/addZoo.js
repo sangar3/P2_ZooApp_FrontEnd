@@ -80,6 +80,15 @@ Zoobutton.addEventListener("click", () => {
             renderAnimalCardHTML(data);
         }
     };
+    let DeleteAnimalButton = document.getElementById("deleteAnimal");
+
+    DeleteAnimalButton.addEventListener("click", () => {
+        console.log("delete Animal button was pressed")
+
+        const Animalcard = document.getElementById("Animal")
+        Animalcard.remove();
+
+    })
 
     //STEP 3: Open the request
     xhr.open("GET", `https://zoo-animal-api.herokuapp.com/animals/rand/${form}`);
@@ -206,8 +215,7 @@ DeleteZooButton.addEventListener("click", () => {
 
     
 
-    const Animalcard = document.getElementById("Animal")
-    Animalcard.remove();
-
 })
+
+
 

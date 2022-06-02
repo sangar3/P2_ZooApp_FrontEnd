@@ -202,8 +202,8 @@ function renderAnimalCardHTML(data){
     // console.log(JSON.stringify(data[0].image_link));
     var animalLink = JSON.stringify(data[0].image_link)
     console.log(animalLink)
-    AnimalImg.src=animalLink
-    FlexAlignDiv.appendChild(AnimalImg);
+    // AnimalImg.src=animalLink
+    // FlexAlignDiv.appendChild(AnimalImg);
 }
 
 let DeleteZooButton = document.getElementById("deleteZoo");

@@ -153,12 +153,14 @@ function renderAnimalCardHTML(data){
     nameDiv.classList.add('me-auto');
     nameListItem.appendChild(nameDiv);
 
+    const headerID = document.createElement('h6');
+    nameDiv.appendChild(headerID)
+    
     // NAME HEADER
     const headerName = document.createElement('h6');
     nameDiv.appendChild(headerName)
     
-    const headerID = document.createElement('h6');
-    nameDiv.appendChild(headerID)
+    
 
     const headerLifespan = document.createElement('h6');
     nameDiv.appendChild(headerLifespan)

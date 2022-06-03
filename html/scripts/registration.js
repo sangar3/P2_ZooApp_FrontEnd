@@ -38,7 +38,7 @@ form.addEventListener('submit', (event) => {
     password: password,
     firstname: firstname,
     lastname: lastname,
-    email: tempUseremail,
+    email: email,
     usertype: usertype
   };
   console.log(tempUser);

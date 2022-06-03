@@ -33,18 +33,68 @@ form.addEventListener('submit', (event) => {
 
   //STEP 2
   //set up template JS object for JSON parsing
-  let tempUser = {
+  let  = {
     username: username,
     password: password,
     firstname: firstname,
     lastname: lastname,
-    email: email,
+    email: tempUseremail,
     usertype: usertype
   };
   console.log(tempUser);
 
   // BACK END REQUEST 
+   //STEP 3
+   xhr.onreadystatechange = function() {
+    // An HTTP status code of 200, means OK
+    // This means the request was processed correctly
+    // and we should have acceptable data
+    // readyState == 4 means that the operation is done
+    if(this.readyState == 4 && this.status == 200) {
+      let data = JSON.parse(xhr.responseText);
+      console.log(data); // do this just to check what we've parsed
+      sessionStorage.setItem('message', xhr.responseText);
+      
+      //redirect user to the success page
+      window.location.replace("user.html");
+    }else if(this.readyState ===4 && xhr.status ===204) {
+        console.log("Failed. Status Code: " + xhr.status)
+        var reason = {
+            code : xhr.status,
+            issue : 'Failed to log in. Incorrect Username or Password.'
+        };
+        console.log(reason);
+        sessionStorage.setItem('failMessage', JSON.stringify(reason));
+        console.log(sessionStorage.getItem('failMessage'));
+    }else if(this.readyState ===4 && xhr.status === 415) {
+      console.log("Failed on Frontend. Status Code: " + xhr.status)
+      var reason = {
+          code : xhr.status,
+          issue : 'METHOD NOT ALLOWED'
+      };
+      console.log(reason);
+      sessionStorage.setItem('failMessage', JSON.stringify(reason));
+      console.log(sessionStorage.getItem('failMessage'));
+  }
+    console.log("Processing")
+  };
 
+
+  //STEP 4
+  //open the request
+  xhr.open("POST", 'http://localhost:8080/api/users/users', true);
+  // This URL is setup to respond with a type of application/json
+  // when it receives a GET request
+  // GET is an HTTP verb/method which means we will be retrieving data
+  // with this request
+  // We also have the url
+
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+  console.log(xhr);
+  //STEP 5
+  //Send the request
+  xhr.send(JSON.stringify(tempUser));
 
 
 

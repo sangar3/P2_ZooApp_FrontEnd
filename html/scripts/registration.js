@@ -33,7 +33,7 @@ form.addEventListener('submit', (event) => {
 
   //STEP 2
   //set up template JS object for JSON parsing
-  let  = {
+  let tempUser  = {
     username: username,
     password: password,
     firstname: firstname,

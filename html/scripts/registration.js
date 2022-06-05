@@ -39,7 +39,7 @@ form.addEventListener('submit', (event) => {
     firstName: firstname,
     lastName: lastname,
     email: email,
-    userRole: {id:2, role: 'user'}
+    userRole: {id:1, role: 'user'}
 
   };
   console.log(tempUser);

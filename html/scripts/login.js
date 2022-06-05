@@ -35,12 +35,13 @@ form.addEventListener('submit', (event) => {
   //do http request and send to server
   try {
     const raw_response = await fetch(
-      `http://localhost:9001/api/trainer/login`,
+      `http://127.0.0.1:8080/api/users/login`,
       {
         method: "POST",
         headers: {
+          "Access-Control-Allow-Headers": "*",
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Origin":"*"
         },
         body: JSON.stringify(loginTemplate),
       }
@@ -63,7 +64,7 @@ form.addEventListener('submit', (event) => {
     if (json_data !== null) {
       setTimeout(() => {
         console.log("redirect starting...");
-        window.location.href = "../html/home.html";
+        window.location.href = "../html/user.html";
       }, 1000);
     }
   } catch (error) {

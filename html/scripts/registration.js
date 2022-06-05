@@ -36,10 +36,11 @@ form.addEventListener('submit', (event) => {
   let tempUser  = {
     username: username,
     password: password,
-    firstname: firstname,
-    lastname: lastname,
+    firstName: firstname,
+    lastName: lastname,
     email: email,
-    usertype: usertype
+    userRole: {id:2, role: 'user'}
+
   };
   console.log(tempUser);
 
@@ -82,13 +83,13 @@ form.addEventListener('submit', (event) => {
 
   //STEP 4
   //open the request
-  xhr.open("POST", 'http://localhost:8080/api/users/users', true);
+  xhr.open("POST", 'http://127.0.0.1:8080/api/users/createUser', true);
   // This URL is setup to respond with a type of application/json
   // when it receives a GET request
   // GET is an HTTP verb/method which means we will be retrieving data
   // with this request
   // We also have the url
-
+  xhr.setRequestHeader("Access-Control-Allow-Headers", "*");
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
   console.log(xhr);
